@@ -18,14 +18,25 @@ slider.oninput = function(){
 }
 
 
-function generatePass(){
+function generatePassword(){
    let pass = "";
-
-   for(let i = 0; n = charset.length; i < sliderElement.value; ++i){
-     pass +=  charset.length.charAt(Math.floor(Math.random() *n)); 
+   for(let i = 0, n =charset.length; i < sliderElement.value; ++i){
+    pass += charset.charAt(Math.floor(Math.random() * n))
+    
    }
 
-   containerPassword.classList.remove("hide"); 
-   password.innerHTML = pass;
-
+   containerPassword.classList.remove("hide");
+    password.innerHTML = pass;
+    novaSenha = pass;
+    
 }
+
+function copyPassword(){
+  navigator.clipboard.writeText(novaSenha)
+    .then(() => {
+      alert("A senha foi copiada 😁");
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }

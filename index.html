@@ -8,6 +8,7 @@
     <title>Gerador de Senha</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -18,10 +19,10 @@
         <span>Tamanho <span id="valor"></span> caracteres</span>
         <input id="slider" class="slider"  type="range" min="5" max="25" value="15"/>
 
-        <button id="button" class="button-cta" onclick="generatePass()">Criar senha</button>
+        <button id="button" class="button-cta" onclick="generatePassword()">Criar senha</button>
     </main>
 
-    <div id="container-password" class="container-password hide">
+    <div id="container-password" onclick="copyPassword()"  class="container-password hide" >
          <span class="title">A senha criada foi:</span>
          <span id="password" class="password"></span>
          <span class="tooltip">Clique na senha para ser copiada. ☝</span>  
